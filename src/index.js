@@ -5,15 +5,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import UserProvider from './contexts/userContext';
+import { CookiesProvider } from 'react-cookie';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <UserProvider>
-          <App />
-      </UserProvider>
-    </BrowserRouter>
+    <CookiesProvider>
+      <BrowserRouter>
+        <UserProvider>
+            <App />
+        </UserProvider>
+      </BrowserRouter>
+    </CookiesProvider>
   </React.StrictMode>
 );
 
