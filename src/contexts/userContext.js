@@ -1,12 +1,11 @@
 import { createContext, useContext, useReducer, useEffect } from "react"
 import { useLocalStorage } from "react-use"
-import { initialMedicalData } from "../data/InitialClientData"
 import { userReducer } from "../reducers/userReducer"
 
-let defaultUserValues = {
+let defaultUserValues = [{
     userId: '',
     displayName: ''
-}
+}]
 
 export const UserDataContext = createContext(null)
 export const UserDispatchContext = createContext(null)
@@ -28,7 +27,7 @@ export default function UserProvider(props) {
     const [persistantData, setPersistantData] = useLocalStorage('user', defaultUserValues)
 
     useEffect(() => {
-        medicalDispatch({type:"setup", data: persistantData})
+        userDispatch({type:"setup", data: persistantData})
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
