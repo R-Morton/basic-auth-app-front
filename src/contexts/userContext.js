@@ -2,10 +2,10 @@ import { createContext, useContext, useReducer, useEffect } from "react"
 import { useLocalStorage } from "react-use"
 import { userReducer } from "../reducers/userReducer"
 
-let defaultUserValues = [{
+let defaultUserValues = {
     userId: '',
     displayName: ''
-}]
+}
 
 export const UserDataContext = createContext(null)
 export const UserDispatchContext = createContext(null)

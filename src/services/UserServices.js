@@ -18,3 +18,17 @@ export async function createUser(data){
         }
     }
 }
+
+export async function loginUser(data) {
+    const response = await fetch(`${api}/users/login`, {
+        method: "POST",
+        headers:{
+            'Content-type':"application/json"
+        },
+        body: JSON.stringify(data)
+    })
+    const json = await response.json()
+    return {
+        token: json.token
+    }
+}

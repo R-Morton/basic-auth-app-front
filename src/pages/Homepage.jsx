@@ -17,7 +17,7 @@ export default function Homepage() {
             :
             <div>
             <button><Link to={'/sign-up'}>Sign up </Link></button>
-            <button>Sign In</button>
+            <button><Link to={'/sign-in'}>Sign in</Link></button>
             </div>
             }
         </div>

@@ -39,7 +39,7 @@ export default function SignUp() {
         const localData = createUserResult.response
         if (token) {
             userDispatch({
-                type: "create",
+                type: "login",
                 data: localData
             })
 

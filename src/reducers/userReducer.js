@@ -1,7 +1,7 @@
 
 
 export const userReducer = (previousState, instructions) => {
-    let stateEditable = [...previousState]
+    let stateEditable = {...previousState}
 
     switch (instructions.type) {
         case "setup":
@@ -11,10 +11,10 @@ export const userReducer = (previousState, instructions) => {
             // Whatever is returned is the new state data
             return stateEditable
         
-        case "create":
+        case "login":
             const newUser = instructions.data
 
-            stateEditable.push(newUser)
+            stateEditable = newUser
 
             return stateEditable
          
