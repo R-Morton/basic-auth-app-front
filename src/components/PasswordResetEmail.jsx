@@ -2,7 +2,7 @@ import { useState } from "react"
 import { passwordResetEmail } from "../services/UserServices"
 
 
-export default function PasswordResetEmailComponent() {
+export default function PasswordResetEmailComponent(props) {
 
     const [email, setEmail] = useState('')
     const [result, setResult] = useState('')
@@ -27,6 +27,7 @@ export default function PasswordResetEmailComponent() {
                 <label>Email</label>
                 <input type="text" onChange={handleEmailChange} />
                 <button type="submit">Submit</button>
+                <button onClick={props.back}>Back</button>
             </form>
             <p>{result}</p>
         </div>

@@ -12,10 +12,15 @@ export default function SignIn() {
 
     return (
         <div>
-            <h1>Sign in</h1>
-            <SignInForm />
-            <p onClick={handlePassReset}>Forgot password?</p>
-            {passReset && <PasswordResetEmailComponent />}
+            {passReset ? 
+                <PasswordResetEmailComponent back={handlePassReset} />
+            :
+                <div>
+                    <h1>Sign in</h1>
+                    <SignInForm />
+                    <button onClick={handlePassReset}>Forgot password?</button>
+                </div>
+            }
         </div>
     )
 }
