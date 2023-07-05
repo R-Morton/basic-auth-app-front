@@ -12,6 +12,7 @@ export default function SignInForm() {
     // eslint-disable-next-line
     const [cookies, setCookie] = useCookies()
     const navigate = useNavigate()
+    const [response, setResponse] = useState(false)
 
     function handleEmailChange(event) {
         setEmail(event.target.value)
@@ -30,7 +31,7 @@ export default function SignInForm() {
 
         const loginResult = await loginUser(apiData)
         const token = loginResult.token
-        const localData = loginResult.response
+        const localData = loginResult.data
         if (token) {
             userDispatch({
                 type: "login",
@@ -41,9 +42,14 @@ export default function SignInForm() {
 
             // set cookie with data
             setCookie('authorization', token, {path: '/', secure: true, expires: expirationDate})
-            navigate('/')
+            setResponse(loginResult.message)
+
+            setTimeout(() => {
+                setResponse(false)
+                navigate('/')
+            }, 2000)
         } else {
-            console.log("something went wrong")
+            console.log(loginResult.response)
         }
         
     }
@@ -57,6 +63,7 @@ export default function SignInForm() {
                 <input type="text" onChange={handlePasswordChange}></input>
                 <button type="submit">Submit</button>
             </form>
+            {response && <p>{response}</p>}
         </div>
     )
 }

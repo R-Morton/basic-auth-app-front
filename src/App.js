@@ -3,6 +3,7 @@ import Homepage from './pages/Homepage';
 import SignUpPage from './pages/SignUp';
 import SignIn from './pages/SignIn';
 import SecurePage from './pages/SecurePage';
+import PasswordResetPage from './pages/PasswordResetPage';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Route path='/sign-up' element={<SignUpPage />}/>
       <Route path='/sign-in' element={<SignIn />} />
       <Route path='/secure' element={<SecurePage />} />
+      <Route path='/password-reset/:token/:_id' element={<PasswordResetPage />} />
     </Routes>
   );
 }

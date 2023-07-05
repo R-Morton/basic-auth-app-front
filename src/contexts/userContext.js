@@ -3,7 +3,7 @@ import { useLocalStorage } from "react-use"
 import { userReducer } from "../reducers/userReducer"
 
 let defaultUserValues = {
-    userId: '',
+    id: '',
     displayName: ''
 }
 
@@ -22,9 +22,9 @@ export function useUserDispatch() {
 
 export default function UserProvider(props) {
 
-    const [userData, userDispatch] = useReducer(userReducer, defaultUserValues)
-
     const [persistantData, setPersistantData] = useLocalStorage('user', defaultUserValues)
+
+    const [userData, userDispatch] = useReducer(userReducer, persistantData || defaultUserValues)
 
     useEffect(() => {
         userDispatch({type:"setup", data: persistantData})
