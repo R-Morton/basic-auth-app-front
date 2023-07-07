@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom"
 
 
 export default function SecurePage() {
+    // eslint-disable-next-line
     const [cookies, setCookies] = useCookies()
     const navigate = useNavigate()
 
@@ -17,6 +18,7 @@ export default function SecurePage() {
         if (!cookies.authorization) {
             redirect()
         }
+    // eslint-disable-next-line
     }, [])
 
 

@@ -22,6 +22,7 @@ export default function Homepage() {
                 handleLogout()
             }
         })
+    // eslint-disable-next-line
     }, [])
 
     return (
