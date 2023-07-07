@@ -60,7 +60,7 @@ export default function SignInForm() {
                 <label>Email:</label>
                 <input type="text" onChange={handleEmailChange}></input>
                 <label>Password:</label>
-                <input type="text" onChange={handlePasswordChange}></input>
+                <input type="password" onChange={handlePasswordChange}></input>
                 <button type="submit">Submit</button>
             </form>
             {response && <p>{response}</p>}

@@ -63,7 +63,7 @@ export default function SignUp() {
                 <input type="text" onChange={handleEmailChange} />
 
                 <label>Password:</label>
-                <input type="text" onChange={handlePasswordChange} />
+                <input type="password" onChange={handlePasswordChange} />
 
                 <label>Name:</label>
                 <input type="text" onChange={handleNameChange} />

@@ -65,9 +65,9 @@ export default function PasswordResetForm() {
                 <div>
                     <form onSubmit={handleFormSubmit}>
                         <label>New Password</label>
-                        <input type="text" onChange={handlePasswordChange} />
+                        <input type="password" onChange={handlePasswordChange} />
                         <label>Confirm New Password</label>
-                        <input type="text" onChange={handleConfirmPasswordChange} />
+                        <input type="password" onChange={handleConfirmPasswordChange} />
                         <button type="submit" disabled={!passwordMatch}>Submit</button>
                     </form>
                     {!passwordMatch && 
